@@ -9,6 +9,9 @@ import 'ant-design-vue/dist/antd.css'
 import AntDesign from 'ant-design-vue'
 Vue.use(AntDesign);
 
+import Directives from './tools/directives/index.js'
+Vue.use(Directives)
+
 Vue.config.productionTip = false
 
 new Vue({

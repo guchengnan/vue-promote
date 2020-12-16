@@ -10,7 +10,7 @@
 					</a-menu-item>
 					<a-menu-item key="2">
 						<a-icon type="video-camera" />
-						<router-link to="/about">About</router-link>
+						<router-link to="/about">关于</router-link>
 					</a-menu-item>
 					<a-menu-item key="3">
 						<a-icon type="api" />
@@ -51,6 +51,9 @@ export default {
 	}
 }
 .ant-layout {
+	.ant-layout-sider{
+		height: 100vh;
+	}
 	.ant-layout-header {
 		background: rgb(255, 255, 255);
 		padding: 0px;
@@ -67,6 +70,9 @@ export default {
 	}
 	.ant-layout-content{
 		margin: 24px;
+		padding: 24px;
+		// height: calc(100vh - 160px);
+		overflow-y: auto;
 		background: rgb(255, 255, 255);
 	}
 }
