@@ -4,9 +4,9 @@
 			<a-layout-sider v-model="collapsed" :trigger="null" collapsible>
 				<div class="logo">Vue</div>
 				<a-menu theme="dark" mode="inline" :default-selected-keys="defaultSelectedKeys">
-					<a-menu-item key="home">
-						<a-icon type="home" />
-						<router-link to="/">首页</router-link>
+					<a-menu-item key="log">
+						<a-icon type="file-text" />
+						<router-link to="/log">日志</router-link>
 					</a-menu-item>
 					<a-menu-item key="request">
 						<a-icon type="link" />
@@ -19,7 +19,6 @@
 				</a-menu>
 			</a-layout-sider>
 			<a-layout>
-				<a-layout-header><a-icon class="trigger" :type="collapsed ? 'menu-unfold' : 'menu-fold'" @click="() => (collapsed = !collapsed)" /></a-layout-header>
 				<a-layout-content>
 					<router-view />
 				</a-layout-content>
@@ -32,10 +31,9 @@
 export default {
 	data() {
 		return {
-			collapsed: false,
-			defaultSelectedKeys: ['home'],
+			defaultSelectedKeys: ['log'],
 			routeMap: {
-				home: ['home'],
+				log: ['log'],
 				request: ['request'],
 				directives: ['directives'],
 			}
