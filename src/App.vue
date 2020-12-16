@@ -2,19 +2,19 @@
 	<div id="app">
 		<a-layout>
 			<a-layout-sider v-model="collapsed" :trigger="null" collapsible>
-				<div class="logo" />
-				<a-menu theme="dark" mode="inline" :default-selected-keys="['1']">
-					<a-menu-item key="1">
+				<div class="logo">Vue</div>
+				<a-menu theme="dark" mode="inline" :default-selected-keys="defaultSelectedKeys">
+					<a-menu-item key="home">
 						<a-icon type="home" />
 						<router-link to="/">首页</router-link>
 					</a-menu-item>
-					<a-menu-item key="2">
-						<a-icon type="video-camera" />
-						<router-link to="/about">关于</router-link>
+					<a-menu-item key="request">
+						<a-icon type="link" />
+						<router-link to="/request">网络请求</router-link>
 					</a-menu-item>
-					<a-menu-item key="3">
+					<a-menu-item key="directives">
 						<a-icon type="api" />
-						<router-link to="/directives">指令</router-link>
+						<router-link to="/directives">自定义指令</router-link>
 					</a-menu-item>
 				</a-menu>
 			</a-layout-sider>
@@ -32,15 +32,28 @@
 export default {
 	data() {
 		return {
-			collapsed: false
+			collapsed: false,
+			defaultSelectedKeys: ['home'],
+			routeMap: {
+				home: ['home'],
+				request: ['request'],
+				directives: ['directives'],
+			}
 		};
 	},
+	created() {
+		const key = location.pathname.split('/')[1]
+		this.defaultSelectedKeys = this.routeMap[key]
+	}
 };
 </script>
 
 <style lang="scss" scoped>
 .logo {
 	height: 32px;
+	color: #fff;
+	line-height: 32px;
+	text-align: center;
 	background: rgba(255, 255, 255, 0.2);
 	margin: 16px;
 }
@@ -52,7 +65,7 @@ export default {
 }
 .ant-layout {
 	.ant-layout-sider{
-		height: 100vh;
+		min-height: 100vh;
 	}
 	.ant-layout-header {
 		background: rgb(255, 255, 255);
