@@ -1,6 +1,6 @@
 <template>
 	<div class="directives">
-		<a-list :header="自定义指令">
+		<a-list header="自定义指令">
 			<a-list-item>
 				<a-comment author="v-focus" avatar="https://lh3.googleusercontent.com/ogw/ADGmqu8rlFwo2Fg_4TJiJFvpcnsfTtEqywOdLCkWSWs=s64-c-mo">
 					<p slot="content">
@@ -10,9 +10,10 @@
 			</a-list-item>
 			<a-list-item>
 				<a-comment author="v-copy" avatar="https://lh3.googleusercontent.com/ogw/ADGmqu8rlFwo2Fg_4TJiJFvpcnsfTtEqywOdLCkWSWs=s64-c-mo">
-					<p slot="content">{{pre}}</p>
+					<p slot="content" v-html="pre"></p>
 					<template slot="actions">
 						<a href="javascript:;" v-copy="pre">复制文本</a>
+						<small>（{{ time }}s后刷新）</small>
 					</template>
 				</a-comment>
 			</a-list-item>			
@@ -25,9 +26,23 @@ import moment from 'moment';
 export default {
 	data() {
 		return {
-			pre: `关关雎鸠，在河之洲。窈窕淑女，君子好逑。参差荇菜，左右流之。窈窕淑女，寤寐求之。求之不得，寤寐思服。悠哉悠哉，辗转反侧。参差荇菜，左右采之。窈窕淑女，琴瑟友之。参差荇菜，左右芼之。窈窕淑女，钟鼓乐之。`,
-			
+			time: 5,
+			pre: '\u5c8c',	
 		};
+	},
+	created() {
+			this.randomText()
+	},
+	methods: {
+		randomText() {
+			setInterval(() => {
+				this.time--
+				if(!this.time){
+					this.pre = `\\u${(Math.round(Math.random() * 20901) + 19968).toString(16)}`
+					this.time = 5
+				}
+			}, 1000)
+		}
 	}
 };
 </script>

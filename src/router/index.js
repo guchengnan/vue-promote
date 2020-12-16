@@ -4,14 +4,18 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+	path: '/',
+	redirect: '/home'
+  },
+  {
+    path: '/home',
     name: 'Home',
     component: () => import(/* webpackChunkName: "home" */ '../views/home/index.vue')
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/about/index.vue')
+    path: '/request',
+    name: 'Request',
+    component: () => import(/* webpackChunkName: "request" */ '../views/request/index.vue')
   },
   {
     path: '/directives',
