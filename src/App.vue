@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
 		<a-layout>
-			<a-layout-sider v-model="collapsed" :trigger="null" collapsible>
+			<a-layout-sider :trigger="null" collapsible>
 				<div class="logo">Vue</div>
 				<a-menu theme="dark" mode="inline" :default-selected-keys="defaultSelectedKeys">
 					<a-menu-item key="log">
@@ -15,6 +15,10 @@
 					<a-menu-item key="directives">
 						<a-icon type="api" />
 						<router-link to="/directives">自定义指令</router-link>
+					</a-menu-item>
+					<a-menu-item key="vuex">
+						<a-icon type="apartment" />
+						<router-link to="/vuex">数据通信</router-link>
 					</a-menu-item>
 				</a-menu>
 			</a-layout-sider>
@@ -36,6 +40,7 @@ export default {
 				log: ['log'],
 				request: ['request'],
 				directives: ['directives'],
+				vuex: ['vuex'],
 			}
 		};
 	},
