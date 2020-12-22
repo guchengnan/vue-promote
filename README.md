@@ -1,19 +1,20 @@
 # vue-depth
 
-## Project setup
+> 该项目的初衷是防止技术栈转移遗忘相关知识点，方便后期快速开发。
+
+## 安装依赖
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### 开发阶段：编译、热重载
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### 生成阶段：编译入口文件+静态资源
 ```
 yarn build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
