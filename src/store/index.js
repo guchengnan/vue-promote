@@ -3,6 +3,9 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+// 引入模块A
+import A from './ModuleA.js'
+
 export default new Vuex.Store({
 	state: {
 		msg: '公共数据'
@@ -15,17 +18,7 @@ export default new Vuex.Store({
 	},
 	actions: {},
 	modules: {
-		A: {
-			namespaced: true, // 开启命名空间 this.$store.commit('A/changeMsg')
-			state: {
-				msg: 'ModuleA数据'
-			},
-			mutations: {
-				changeMsg(state, val) {
-					state.msg = val
-				}
-			},
-		},
+		A,
 		B: {
 			namespaced: true,
 			state: {
