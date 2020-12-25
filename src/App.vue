@@ -20,6 +20,10 @@
 						<a-icon type="apartment" />
 						<router-link to="/vuex">数据通信</router-link>
 					</a-menu-item>
+					<a-menu-item key="authority">
+						<a-icon type="apartment" />
+						<router-link to="/authority">权限render</router-link>
+					</a-menu-item>
 				</a-menu>
 			</a-layout-sider>
 			<a-layout>
@@ -41,11 +45,12 @@ export default {
 				request: ['request'],
 				directives: ['directives'],
 				vuex: ['vuex'],
+				authority: ['authority']
 			}
 		};
 	},
 	created() {
-		const key = location.pathname.split('/')[1]
+		const key = location.hash.slice(2)
 		this.defaultSelectedKeys = this.routeMap[key]
 	}
 };

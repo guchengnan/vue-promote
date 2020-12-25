@@ -22,7 +22,12 @@ const routes = [
     path: '/vuex',
     name: 'Vuex',
     component: () => import(/* webpackChunkName: "vuex" */ '../views/vuex/index.vue')
-  }
+  },
+  {
+	path: '/authority',
+    name: 'Authority',
+    component: () => import(/* webpackChunkName: "authority" */ '../views/authority/index.vue')
+  },
 ]
 
 export default routes
