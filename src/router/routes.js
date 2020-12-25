@@ -28,6 +28,11 @@ const routes = [
     name: 'Authority',
     component: () => import(/* webpackChunkName: "authority" */ '../views/authority/index.vue')
   },
+  {
+  	path: '/mixins',
+    name: 'Mixins',
+    component: () => import(/* webpackChunkName: "mixins" */ '../views/mixins/index.vue')
+  }
 ]
 
 export default routes

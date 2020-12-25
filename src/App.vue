@@ -21,8 +21,12 @@
 						<router-link to="/vuex">数据通信</router-link>
 					</a-menu-item>
 					<a-menu-item key="authority">
-						<a-icon type="apartment" />
+						<a-icon type="lock" />
 						<router-link to="/authority">权限render</router-link>
+					</a-menu-item>
+					<a-menu-item key="mixins">
+						<a-icon type="pushpin" />
+						<router-link to="/mixins">Mixins混入</router-link>
 					</a-menu-item>
 				</a-menu>
 			</a-layout-sider>
@@ -45,7 +49,8 @@ export default {
 				request: ['request'],
 				directives: ['directives'],
 				vuex: ['vuex'],
-				authority: ['authority']
+				authority: ['authority'],
+				mixins: ['mixins']
 			}
 		};
 	},
